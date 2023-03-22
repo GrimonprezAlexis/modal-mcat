@@ -1,0 +1,80 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 700px;
+  max-width: 700px;
+  font-family: "Greek Letters", Verdana, Geneva, sans-serif;
+  box-shadow: none;
+  max-height: 500px;
+}
+
+.modal-inner {
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  color: #FFFFFF;
+  background: #006DAA;
+  padding: 0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: move;
+  border-bottom: 1px solid #FFFFFF;
+  height: 28px;
+  padding: 0px 20px;
+}
+
+.modal-header h1 {
+  text-align: left;
+  font-size: 14pt;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 28px;
+  color: #FFFFFF;
+  text-shadow: none;
+  font-weight: normal;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: middle;
+}
+
+.close-button {
+  color: #FFFFFF;
+  background: none;
+  cursor: pointer;
+  border: 1px solid;
+  box-sizing: border-box;
+  font-size: 13pt;
+  border-radius: 0;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.clearfix:before {
+  display: table;
+  content: "";
+  line-height: 0;
+}
