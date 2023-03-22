@@ -23,12 +23,23 @@ function App() {
     <div>
       <button onClick={handleOpenModal}>Open Modal</button>
       <Modal
+        modalId="example-modal"
         title="Example Modal"
         isOpen={showModal}
-        onClose={handleCloseModal}
+        onClose={() => setShowModal(false)}
+        ariaLabel="Example modal"
       >
-        <p>This is the body of the modal.</p>
-        <button onClick={handleCloseModal}>Close Modal</button>
+        {{
+          body: (
+            <>
+              <p>Modal body content</p>
+              <p>More modal body content</p>
+            </>
+          ),
+          footer: (
+            <button onClick={() => setShowModal(false)}>Close modal</button>
+          ),
+        }}
       </Modal>
     </div>
   );
@@ -41,13 +52,17 @@ export default App;
 
 | Prop  | Type  | Required | Description
 | :------------ |:---------------:| -----:| ------------:|
-| title      | string | Yes | The title of the Modal
-| isOpen      | boolean        |   Yes | Determines whether the Modal is visible or not
+| modalId      | string | Yes | ID of the modal container
+| modalTitle      | string | Yes | Title of the modal in the header
+| modalName      | string | No | used to apply custom styles to the modal
+| ariaLabel      | string | No | accessible label for the modal
+| isOpen      | boolean        |   Yes | controls whether the modal is visible or not
 | onClose | function        |    Yes | Callback function that is called when the Modal is closed
 | children | node        |    No | The content of the Modal
 ----
 
-## Customization
+
+## Basic Customization Example
 The Modal component can be easily customized by modifying the CSS styles that are applied to it. The component is designed to be as unobtrusive as possible, with a minimal set of default styles that can be easily overridden.
 
 To customize the styles of the Modal component, you can create a new CSS file and import it into your application:
@@ -81,7 +96,7 @@ To customize the styles of the Modal component, you can create a new CSS file an
   margin-bottom: 10px;
 }
 
-.modal-header h2 {
+.modal-header h1 {
   margin: 0;
   font-size: 1.5rem;
 }
