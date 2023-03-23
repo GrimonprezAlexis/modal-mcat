@@ -2,40 +2,6 @@ body {
 	margin: 0
 }
 
-
-
-.driver-warning-icon {
-	width: 40px;
-    height: 40px;
-    margin-right: 20px;
-    display: block;
-    float: left;
-    background-image: linear-gradient(transparent, transparent),url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/alert-aa4477fb4e8846f07af969e8479538298dfe4d43eb23cff49e4d9d78a8e2d3f4.svg);
-}
-
-#end-section-modal .message {
-    display: inline-block;
-    width: 565px;
-}
-
-#end-section-modal .message p {
-	margin: 0;
-    margin-bottom: 1.618em;
-}
-
-.modal.pearson a.driver-btn {
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    cursor: pointer;
-    font-family: "Greek Letters", Verdana, Geneva, sans-serif;
-    font-size: 12pt;
-    text-decoration: none;
-    padding: 4px 10px;
-	margin: 0 2px;
-}
-
-.modal.pearson a.driver-btn:first-letter{text-decoration:underline}
-
 .modal.pearson .hotkey-underline {
     display: inline-block;
 }

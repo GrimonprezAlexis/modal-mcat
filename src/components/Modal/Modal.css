@@ -27,11 +27,14 @@
   padding: 0;
 }
 
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
 .modal-header {
+  background: #006DAA;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   cursor: move;
   border-bottom: 1px solid #ffffff;
   height: 28px;
@@ -61,34 +64,11 @@
   border-radius: 0;
 }
 
+/*--------------------------------------------------------------
+# BODY
+--------------------------------------------------------------*/
 .modal-body {
   padding: 20px;
-}
-
-.modal-footer {
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0px;
-}
-
-.modal-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  display: block;
-  float: left;
-}
-
-.modal-icon .driver-warning-icon {
-  background-image: linear-gradient(transparent, transparent),
-    url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/alert-aa4477fb4e8846f07af969e8479538298dfe4d43eb23cff49e4d9d78a8e2d3f4.svg);
-}
-
-.modal-icon .driver-info-icon {
-  background-image: linear-gradient(transparent, transparent),
-    url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/info-2a467f3….svg);
 }
 
 .modal-message {
@@ -99,6 +79,45 @@
 .modal-message p {
   margin: 0;
   margin-bottom: 1.618em;
+}
+
+/*--------------------------------------------------------------
+# ICON
+--------------------------------------------------------------*/
+.modal-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  display: block;
+  float: left;
+}
+
+.modal-icon.driver-warning-icon {
+  background: linear-gradient(transparent, transparent),
+    url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/alert-aa4477fb4e8846f07af969e8479538298dfe4d43eb23cff49e4d9d78a8e2d3f4.svg);
+}
+
+.modal-icon.driver-info-icon {
+  background: linear-gradient(transparent, transparent),
+    url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/info-2a467f3febf94dc3b4eb14015ab860d2dcfe0cbdfcec6d9ef9ae61a7baeb6409.svg)
+}
+
+.modal-icon.driver-question-icon {
+  background: linear-gradient(transparent, transparent), url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/break-1ae8deb38668ddc8918b4a90be49a2323139dbc011b561f592f7b4bbef440457.svg);
+}
+
+
+
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+.modal-footer {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
 }
 
 .modal-footer a.driver-btn:first-letter{text-decoration:underline}

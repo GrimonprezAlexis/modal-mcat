@@ -76,6 +76,9 @@ headerTitle: (required) a string representing the title of the modal header.
 | isOpen      | boolean        |   Yes | controls whether the modal is visible or not
 | onClose | function        |    Yes | Callback function that is called when the Modal is closed
 | children | node        |    No | The content of the Modal
+| draggable | boolean        |    No | Feature of dragging
+| innerBackground | string        |    No | Customize the content of modal (manualy reflect color, and border on `modal.footer` fragment action)
+| innerColor | string        |    No | Customize the text color (manualy reflect color, and border on `modal.footer` fragment action)
 ----
 
 In this example, the Modal component is used to display a modal window with a warning icon and two buttons, "Yes" and "No". The Modal.Body component contains the text of the warning message.
