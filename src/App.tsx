@@ -29,7 +29,7 @@ const App = () => {
           <Modal
             modalId="end-section-modal"
             modalName="pearson"
-            headerTitle="Time Expired"
+            headerTitle="End section"
             headerBackground="red"
             isOpen={showModal}
             onClose={handleCloseModal}
@@ -118,7 +118,6 @@ const App = () => {
           modalName="exam-section-break"
           isOpen={showModal3}
           onClose={handleCloseModal3}
-          draggable={true}
           headerBackground="#006DAA"
           innerBackground="#E1DECC"
           innerColor="black"
