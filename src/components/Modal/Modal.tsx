@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 
 interface ModalProps {
   modalId: string;
-  modalName: string; //used for apply style
+  modalName: string;
   ariaLabel?: string;
   headerBackground?: string;
   headerTitle?: string;

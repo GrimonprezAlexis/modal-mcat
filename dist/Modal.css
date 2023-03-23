@@ -1,0 +1,133 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 700px;
+  max-width: 700px;
+  font-family: "Greek Letters", Verdana, Geneva, sans-serif;
+  box-shadow: none;
+  max-height: 500px;
+}
+
+.modal-inner {
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  color: #ffffff;
+  background: #006daa;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
+.modal-header {
+  background: #006DAA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  border-bottom: 1px solid #ffffff;
+  height: 28px;
+  padding: 0px 20px;
+}
+
+.modal-header h1 {
+  text-align: left;
+  font-size: 14pt;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 28px;
+  color: #ffffff;
+  text-shadow: none;
+  font-weight: normal;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: middle;
+}
+
+.close-button {
+  color: #ffffff;
+  background: none;
+  cursor: pointer;
+  border: 1px solid;
+  box-sizing: border-box;
+  font-size: 13pt;
+  border-radius: 0;
+}
+
+/*--------------------------------------------------------------
+# BODY
+--------------------------------------------------------------*/
+.modal-body {
+  padding: 20px;
+}
+
+.modal-message {
+  display: inline-block;
+  width: 565px;
+}
+
+.modal-message p {
+  margin: 0;
+  margin-bottom: 1.618em;
+}
+
+/*--------------------------------------------------------------
+# ICON
+--------------------------------------------------------------*/
+.modal-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  display: block;
+  float: left;
+}
+
+.modal-icon.driver-warning-icon {
+  background: linear-gradient(transparent, transparent),
+    url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/alert-aa4477fb4e8846f07af969e8479538298dfe4d43eb23cff49e4d9d78a8e2d3f4.svg);
+}
+
+.modal-icon.driver-info-icon {
+  background: linear-gradient(transparent, transparent),
+    url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/info-2a467f3febf94dc3b4eb14015ab860d2dcfe0cbdfcec6d9ef9ae61a7baeb6409.svg)
+}
+
+.modal-icon.driver-question-icon {
+  background: linear-gradient(transparent, transparent), url(https://d2to8dvdqb8lhi.cloudfront.net/app/assets/shared/aamc/break-1ae8deb38668ddc8918b4a90be49a2323139dbc011b561f592f7b4bbef440457.svg);
+}
+
+
+
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+.modal-footer {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.modal-footer a.driver-btn:first-letter{text-decoration:underline}
+.modal-footer a.driver-btn {
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  font-family: "Greek Letters", Verdana, Geneva, sans-serif;
+  font-size: 12pt;
+  text-decoration: none;
+  padding: 4px 10px;
+  margin: 0 2px;
+}

@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "babel ./src/components/Modal/Modal.tsx --out-dir dist --extensions \".tsx\" --source-maps inline && cp ./src/components/Modal/Modal.css dist/Modal.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,6 +41,9 @@
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6"
   }
 }
