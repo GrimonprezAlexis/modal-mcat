@@ -1,25 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 
-interface Props {
+interface ModalProps {
   modalId: string;
-  modalTitle: string;
-  modalName?: string; //used for apply style
+  modalName: string; //used for apply style
   ariaLabel?: string;
+  headerBackground?: string;
+  headerTitle: string;
   isOpen: boolean;
   onClose: () => void;
-  children?: {
-    body?: React.ReactNode;
+  children: {
+    body: {
+      icon?: string;
+      children: React.ReactNode;
+    };
     footer?: React.ReactNode;
   };
 }
 
-const Modal: React.FC<Props> = ({
+const Modal: React.FC<ModalProps> = ({
   modalId,
-  modalTitle,
   modalName,
   ariaLabel,
+  headerBackground,
+  headerTitle,
   isOpen,
   onClose,
   children,
@@ -48,8 +53,11 @@ const Modal: React.FC<Props> = ({
         aria-label={ariaLabel}
       >
         <div className="modal-inner" tabIndex={0}>
-          <div className="modal-header">
-            <h1>{modalTitle}</h1>
+          <div
+            className="modal-header"
+            style={{ background: headerBackground }}
+          >
+            <h1>{headerTitle}</h1>
             <button
               type="button"
               className="close-button"
@@ -60,8 +68,16 @@ const Modal: React.FC<Props> = ({
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div className="modal-body">{children?.body}</div>
-          <div className="modal-footer clearfix">{children?.footer}</div>
+          <div className="modal-body">
+            {children?.body?.icon && (
+              <div className={`modal-icon ${children.body.icon}`}></div>
+            )}
+            <div className="modal-message">{children?.body?.children}</div>
+          </div>
+
+          {children?.footer && (
+            <div className="modal-footer clearfix">{children.footer}</div>
+          )}
         </div>
       </div>
     </div>,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 
@@ -19,16 +19,17 @@ const App = () => {
         {showModal && (
           <Modal
             modalId="end-section-modal"
-            modalTitle="End Section"
             modalName="pearson"
+            headerTitle="Time Expired"
+            headerBackground="red"
             isOpen={showModal}
             onClose={handleCloseModal}
           >
             {{
-              body: (
-                <>
-                  <div className="driver-warning-icon"></div>
-                  <div className="message">
+              body: {
+                icon: "driver-warning-icon",
+                children: (
+                  <Fragment>
                     <p>
                       You have chosen to end this exam section, but you have 59
                       incomplete questions. Select “Yes” to confirm that you
@@ -39,29 +40,26 @@ const App = () => {
                       If you select “Yes”, you will NOT be able to return to
                       this section.
                     </p>
-                  </div>
-                </>
-              ),
+                  </Fragment>
+                ),
+              },
               footer: (
-                <>
-                  <Link
+                <Fragment>
+                  <a
                     className="confirm-end-section driver-btn btn-small actionable hotkey-underline hotkey"
-                    to="#"
+                    href={"/"}
                     role="button"
                   >
                     Yes
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     className="cancel-end-section driver-btn btn-small actionable hotkey-underline hotkey"
-                    to="#"
+                    href={"/"}
                     role="button"
                   >
                     No
-                  </Link>
-                  {/* <button onClick={() => setShowModal(false)}>
-                    Close modal
-                  </button> */}
-                </>
+                  </a>
+                </Fragment>
               ),
             }}
           </Modal>

@@ -1,8 +1,6 @@
-A fully-featured and customizable Modal component for React, with support for title, content, and custom actions.
+## Modal Component
+The Modal component is a reusable component that can be used to display modal windows on a webpage. It can be customized with different header backgrounds and modal styles.
 
-## Usage
-
-In this example, the Modal component is used to display a simple modal dialog when a button is clicked. The isOpen prop is used to control whether the modal is displayed or hidden, and the onClose prop is used to handle the closing of the modal. The title and content of the modal are passed as children to the component.
 
 ```react
 import React, { useState } from 'react';
@@ -22,25 +20,42 @@ function App() {
   return (
     <div>
       <button onClick={handleOpenModal}>Open Modal</button>
-      <Modal
-        modalId="example-modal"
-        title="Example Modal"
+        <Modal
+        modalId="end-section-modal"
+        modalName="pearson"
+        ariaLabel="Time Expired"
+        headerBackground="red"
+        headerTitle="Time Expired"
         isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        ariaLabel="Example modal"
-      >
-        {{
-          body: (
-            <>
-              <p>Modal body content</p>
-              <p>More modal body content</p>
-            </>
-          ),
-          footer: (
-            <button onClick={() => setShowModal(false)}>Close modal</button>
-          ),
-        }}
-      </Modal>
+        onClose={handleCloseModal}
+        >
+        <Modal.Body icon="driver-warning-icon">
+            <p>
+            You have chosen to end this exam section, but you have 59 incomplete questions.
+            Select “Yes” to confirm that you wish to end this exam section, or “No” to return to the Section Review.
+            </p>
+            <p>
+            If you select “Yes”, you will NOT be able to return to this section.
+            </p>
+        </Modal.Body>
+        <Modal.Footer>
+            <a
+            className="confirm-end-section driver-btn btn-small actionable hotkey-underline hotkey"
+            href={"/"}
+            role="button"
+            >
+            Yes
+            </a>
+            <a
+            className="cancel-end-section driver-btn btn-small actionable hotkey-underline hotkey"
+            href={"/"}
+            role="button"
+            >
+            No
+            </a>
+        </Modal.Footer>
+        </Modal>
+
     </div>
   );
 }
@@ -53,68 +68,14 @@ export default App;
 | Prop  | Type  | Required | Description
 | :------------ |:---------------:| -----:| ------------:|
 | modalId      | string | Yes | ID of the modal container
-| modalTitle      | string | Yes | Title of the modal in the header
 | modalName      | string | No | used to apply custom styles to the modal
 | ariaLabel      | string | No | accessible label for the modal
+| headerBackground      | string | Yes | representing the background color of the modal header.
+headerTitle: (required) a string representing the title of the modal header.
+| headerTitle      | string | Yes | Title of the modal in the header
 | isOpen      | boolean        |   Yes | controls whether the modal is visible or not
 | onClose | function        |    Yes | Callback function that is called when the Modal is closed
 | children | node        |    No | The content of the Modal
 ----
 
-
-## Basic Customization Example
-The Modal component can be easily customized by modifying the CSS styles that are applied to it. The component is designed to be as unobtrusive as possible, with a minimal set of default styles that can be easily overridden.
-
-To customize the styles of the Modal component, you can create a new CSS file and import it into your application:
-
-```css
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-}
-
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.modal-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.close-button {
-  background-color: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-```
-
-In this example, the default styles for the Modal component
-
-## Contributing
-
-If you'd like to contribute to this project, please submit a pull request or create an issue on the Github repository.
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.# react-custom-modal
+In this example, the Modal component is used to display a modal window with a warning icon and two buttons, "Yes" and "No". The Modal.Body component contains the text of the warning message.
